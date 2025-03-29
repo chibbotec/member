@@ -2,9 +2,9 @@ spring:
   profiles:
     active: dev
     include: secret
-  logging:
-    level:
-      com.ll.chatApp: DEBUG
-      org.hibernate.orm.jdbc.bind: TRACE
-      org.hibernate.orm.jdbc.extract: TRACE
-      org.springframework.transaction.interceptor: TRACE
+logging:
+  level:
+    com.ll.chatApp: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE
+    org.hibernate.orm.jdbc.extract: TRACE
+    org.springframework.transaction.interceptor: TRACE
