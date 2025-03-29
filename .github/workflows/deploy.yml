@@ -64,8 +64,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ env.OWNER_LC }}/memberService:${{ needs.makeTagAndRelease.outputs.tag_name }},
-            ghcr.io/${{ env.OWNER_LC }}/memberService:latest
+            ghcr.io/${{ env.OWNER_LC }}/member_service:${{ needs.makeTagAndRelease.outputs.tag_name }},
+            ghcr.io/${{ env.OWNER_LC }}/member_service:latest
 #  deploy:
 #    runs-on: ubuntu-latest
 #    needs: [ buildImageAndPush ]
@@ -96,7 +96,7 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            mkdir -p /dockerProjects/chibbotec/memberService
-            curl -o /dockerProjects/chibbotec/memberService/zero_downtime_deploy.py https://raw.githubusercontent.com/chibbotec/memberService/main/infraScript/zero_downtime_deploy.py
-            chmod +x /dockerProjects/chibbotec/memberService/zero_downtime_deploy.py
-            python3 /dockerProjects/chibbotec/memberService/zero_downtime_deploy.py
+            mkdir -p /dockerProjects/chibbotec/member_service
+            curl -o /dockerProjects/chibbotec/member_service/zero_downtime_deploy.py https://raw.githubusercontent.com/chibbotec/member_service/main/infraScript/zero_downtime_deploy.py
+            chmod +x /dockerProjects/chibbotec/member_service/zero_downtime_deploy.py
+            python3 /dockerProjects/chibbotec/member_service/zero_downtime_deploy.py
