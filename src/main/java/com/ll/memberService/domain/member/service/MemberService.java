@@ -39,6 +39,6 @@ public class MemberService {
   }
 
   public Member searchMember(String keyword) {
-    return memberRepository.findByUsername(keyword);
+    return memberRepository.findByUsernameOrNickname(keyword,keyword);
   }
 }
